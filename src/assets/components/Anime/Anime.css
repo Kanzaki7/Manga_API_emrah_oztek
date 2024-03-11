@@ -1,0 +1,86 @@
+.descAnime {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.animeDesc {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.desc {
+    width: 85%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px solid black; */
+}
+
+.descInfos {
+    width: 69%;
+    height: 100%;
+}
+
+.descImg {
+    width: 27%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.descImg img {
+    width: 100%;
+    height: 90%;
+}
+
+
+.sypTitle {
+    font-size: 30px;
+    font-weight: bold;
+    color: #f854ff;
+    border-bottom: 1px solid gray;
+}
+
+.sypnopsis {
+    width: 100%;
+    font-size: 14px;
+    color: gray;
+}
+
+.genre {
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    /* border: 2px solid red; */
+    gap: 5px;
+}
+
+.genres {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.op {
+    margin-left: 50px;
+}
+
+.video {
+    width: 80%;
+    height: 30%;
+    border: 9px solid green;
+}

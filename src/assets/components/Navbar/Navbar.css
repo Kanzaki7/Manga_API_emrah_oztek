@@ -1,0 +1,40 @@
+.navbar {
+    width: 100%;
+    height: 20%;
+    background-color: #160c35;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navTitle{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.navPages {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.navPages div {
+    cursor: pointer;
+}
+
+.linkPage {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+}
