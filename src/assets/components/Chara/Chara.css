@@ -1,0 +1,51 @@
+.nck {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+.animesPerso {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+.pPerso {
+    font-size: 17px;
+}
+
+.descPerso {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px solid black; */
+}
+
+.descInfosPerso {
+    width: 77%;
+    height: 100%;
+}
+
+.descImgPerso {
+    width: 21%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.708) 0px 50px 100px -20px, rgba(0, 0, 0, 0.666) 0px 30px 60px -30px, rgba(10, 37, 64, 0.662) 0px -2px 6px 0px inset;
+}
+
+.descImgPerso img {
+    width: 100%;
+    height: 100%;
+}

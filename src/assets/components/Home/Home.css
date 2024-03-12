@@ -7,6 +7,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 .searchBar {
@@ -27,9 +28,25 @@
     border-radius: 40px;
 }
 
-#episodes {
-    width: 15%;
+.filter {
+    width: 50%;
     height: 40%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+#episodes {
+    width: 35%;
+    height: 100%;
+    font-size: 17px;
+    background-color: white;
+    color: black;
+}
+#rating {
+    width: 35%;
+    height: 100%;
     font-size: 17px;
     background-color: white;
     color: black;
@@ -38,7 +55,7 @@
 .animes {
     /* border: 2px solid black; */
     width: 80%;
-    height: 65%;
+    height: 50%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -135,7 +152,38 @@
   .loading {
     width: 30%;
     height: 100%;
-    font-size: 25px;
+    font-size: 40px;
     color: #2f0b72;
     font-weight: bold;
   }
+
+  .pages {
+    width: 100%;
+    height: 10%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    gap: 70px;
+  }
+
+  .btnPage {
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btnPage:hover {
+    background-color: #f854ff;
+  }
+
+.btnPage span {
+    font-size: 30px;
+}

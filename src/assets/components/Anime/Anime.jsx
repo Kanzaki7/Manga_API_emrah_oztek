@@ -2,6 +2,7 @@ import './Anime.css'
 import { useState, useEffect, } from 'react'
 import { useParams } from 'react-router'
 import Navbar from '../Navbar/Navbar'
+import star from '../../../assets/star.png'
 
 export default function Anime(props) {
 
@@ -38,13 +39,21 @@ export default function Anime(props) {
                     <div className='animeDesc'>
                         <div className='desc'>
                             <div className='descInfos'>
-                                <h1>{ animes.title }</h1>
-                                <h2>{ animes.title_japanese }</h2>
+                                <div className='title-score'>
+                                    <h1>{ animes.title }</h1>
+                                    <div className='score'>
+                                        <img src={star} alt="" />
+                                        <p className='gras score-title'>{animes.score}</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2>{ animes.title_japanese }</h2>
+                                </div>
                                 <p className='sypTitle'>Synopsis:</p>
                                 <p className='sypnopsis'>{animes.synopsis}</p>
-                                <p>Studio : {animes.studios[0].name}</p>
+                                <p className='gras'>Studio : {animes.studios[0].name}</p>
                                 <div className='genre'>
-                                    <p>Genre(s) : </p> 
+                                    <p className='gras'>Genre(s) : </p> 
                                     <div className='genres'>{animes.genres.map((genre,index)=>(
                                     <p key={index}>{genre.name}</p>
                                 ))}</div></div>

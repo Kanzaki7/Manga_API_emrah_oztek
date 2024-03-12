@@ -1,0 +1,112 @@
+.characters {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.charas {
+    /* border: 2px solid black; */
+    width: 80%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.persoLink {
+    position: relative;
+    cursor: pointer;
+    width: 20%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid black; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.perso {
+    width: 100%;
+    height: 100%;
+}
+
+.divImgPerso {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divImgPerso img {
+    width: 100%;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.infosPerso {
+    position: absolute;
+    background-color: #160c35;
+    color: #f854ff;
+    top: 100%;
+    width: 100%;
+    height: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.perso:hover .infosPerso {
+    height: 30%;
+    /* display: flex; */
+    top: 70%;
+    transition: all .3s ease-in-out;    
+}
+
+.perso:hover .persoName {
+    display: flex;
+    transition: all .3s ease-in-out;    
+}
+.perso:hover .names {
+    display: flex;
+    transition: all .3s ease-in-out;    
+}
+
+.persoName {
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+}
+
+
+p {
+    margin: 0;
+}
+
+.nickname {
+    font-size: 12px;
+    margin-left: 10px;
+    width: 100%;
+}
+
+.names {
+    display: none;
+    flex-direction: row;
+    height: 60%;
+}
+
+.name {
+    font-weight: 200;
+}

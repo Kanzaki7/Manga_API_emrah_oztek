@@ -1,9 +1,9 @@
-import './Mangas.css'
+import './Charas.css'
 import Navbar from '../Navbar/Navbar'
 import { useState, useEffect, } from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Mangas(props) {
+export default function Charas(props) {
 
     const [animes, setAnimes] = useState([])
     const [animesFilt, setAnimesFilt] = useState([])
@@ -11,8 +11,9 @@ export default function Mangas(props) {
     const [searchAnime, setSearchAnime] = useState("")
     const [page, setPage] = useState(1)
 
+
     useEffect(() => {
-        fetch(`https://api.jikan.moe/v4/top/manga?page=${page}`)
+        fetch(`https://api.jikan.moe/v4/top/characters?page=${page}`)
             .then((response) => response.json())
             .then((response) => setAnimes(response.data))
             .catch((error) => console.log(error));
@@ -27,9 +28,9 @@ export default function Mangas(props) {
     }, [page])
 
     useEffect(() => {
-        let filt = animes.filter(l => l.titles[0].title.toLowerCase().includes(searchAnime.toLowerCase()));
+        let filt = animes.filter(l => l.name.toLowerCase().includes(searchAnime.toLowerCase()));
         setAnimesFilt(filt);
-    }, [searchAnime, animes])   
+    }, [searchAnime, animes])
 
     function plusUn() {
         if (page < 100) {
@@ -48,10 +49,10 @@ export default function Mangas(props) {
     }
 
     return(
-        <div className='mangas'>
+        <div className='characters'>
             <Navbar active={props.active} setActive={props.setActive}/>
             <div className='searchBar'>
-                <input type="text" className='search' placeholder="Nom du manga..." value={searchAnime} onChange={(e)=>setSearchAnime(e.target.value)}/>
+                <input type="text" className='search' placeholder="Nom du personnage..." value={searchAnime} onChange={(e)=>setSearchAnime(e.target.value)}/>
             </div>
             <div className='pages'>
                 <div className='btnPage' onClick={moinsUn}>
@@ -62,26 +63,29 @@ export default function Mangas(props) {
                     <span>→</span>
                 </div>
             </div>
-            <div className='manga'>
-                {dataState === true ?
-                    
+            <div className='charas'>
+            {dataState === true ?
+                
                     animesFilt.map((anime, index) => (
-                        <div className='anime' key={index}>
-                            <div className='divImg'>
-                                <img src={anime.images.jpg.image_url} alt="" />
-                            </div>
-                            <div className='divInfos'>
-                                <div className='infos'>
-                                    <p className='infoTitle'>{anime.titles[0].title}</p>
-                                    <p><span className='gras'>volumes : </span> {anime.volumes}</p>
-                                    <p><span className='gras'>Score : </span>{anime.score}</p>
-                                    <p><span className='gras'>Studio : </span>{anime.authors[0].name}</p>
+                        <Link className='persoLink' to={'/characters/'+anime.mal_id}>
+                            <div className='perso' key={index}>
+                                <div className='divImgPerso'>
+                                    <img src={anime.images.jpg.image_url} alt="" />
                                 </div>
-                                <div className='infosDiv'>
-                                    <Link to={"/manga/"+anime.mal_id} className='animeLink'><div className='btnInfosManga'>Plus d'info</div></Link>
+                                <div className='infosPerso'>
+                                    <p className='persoName'>{anime.name}</p>
+                                    <div className='names'>
+                                        <p className='nickname'>Nicknames :                                         <div className='divNick'>
+                                                {
+                                                    anime.nicknames.map((nick, index)=>(
+                                                        <span className='name' key={index}> { '"' + nick + '"' } </span>
+                                                    ))
+                                                }
+                                            </div></p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))
                 : null 
             }
