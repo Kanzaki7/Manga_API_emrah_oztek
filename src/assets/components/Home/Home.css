@@ -187,3 +187,51 @@
 .btnPage span {
     font-size: 30px;
 }
+
+.like {
+    width: 35%;
+    height: 80%;
+    /* border-radius: 50%; */
+    /* color: #f854ff; */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.btnlike {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /* background-color: #f854ff; */
+    border: 2px solid #f854ff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnlikeActive {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f854ff;
+    border: 2px solid #f854ff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnlike:hover {
+    background-color: #f854ff;
+}
+.btnlike:hover .hearth {
+    color: white;
+}
+
+.hearth {
+    font-size: 35px;
+    color: #f854ff;
+}
+.hearthActive {
+    font-size: 35px;
+    color: white;
+}

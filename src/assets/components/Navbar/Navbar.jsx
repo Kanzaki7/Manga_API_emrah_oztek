@@ -21,6 +21,7 @@ export default function Navbar(props) {
                 <Link to="/" className={props.active === "animes" ? 'linkPageActive' : 'linkPage'} onClick={()=>props.setActive("animes")}><div>Top Anime</div></Link>
                 <Link to="/manga" className={props.active === "mangas" ? 'linkPageActive' : 'linkPage'} onClick={()=>props.setActive("mangas")}><div>Top Manga</div></Link>
                 <Link to="/characters" className={props.active === "charas" ? 'linkPageActive' : 'linkPage'} onClick={()=>props.setActive("charas")}><div>Top Characters</div></Link>
+                <Link to="/favori" className={props.active === "favori" ? 'linkPageActive' : 'linkPage'} onClick={()=>props.setActive("favori")}><div>Favoris</div></Link>
             </div>
             <div className='navTitle'>
                 <img src={logo3} alt="" />

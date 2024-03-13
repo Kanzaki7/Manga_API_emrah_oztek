@@ -2,6 +2,7 @@ import './Home.css'
 import Navbar from '../Navbar/Navbar'
 import { useState, useEffect, } from 'react'
 import { Link } from 'react-router-dom'
+import { useLocalStorage } from '@uidotdev/usehooks'
 
 
 export default function Home(props) {
@@ -12,7 +13,10 @@ export default function Home(props) {
     const [searchAnime, setSearchAnime] = useState("")
     const [epsAnime, setEpsAnime] = useState("tous")
     const [rating, setRating] = useState("")
+    const [btnLike, setBtnLike] = useLocalStorage("btnlike")
+    const [hearth, setHearth] = useLocalStorage("hearth")
     const [page, setPage] = useState(1)
+    // const [state, setState] = useState(-1)
     // const [animeID, setAnimeID] = useState("")
    
   
@@ -92,6 +96,28 @@ export default function Home(props) {
         }
     }
 
+    function Like(index) {
+        let favA = [...animes]
+        favA[index].favori = props.favori
+        console.log(favA[index].favori);
+        props.setFavoriAnime(favA)
+        // if (btnLike === "btnlike") {
+        //     setBtnLike("btnlikeActive")
+        // } else if (btnLike === "btnlikeActive") {
+        //     setBtnLike("btnlike")
+        // }
+        // if (hearth === "hearth") {
+        //     setHearth("hearthActive")
+        // } else if (hearth === "hearthActive") {
+        //     setHearth("hearth")
+        // }
+        // setState(index)
+    }
+
+    useEffect(() => {
+        props.setFavori(!props.favori)
+      }, [])
+
 
     return(
         <div className='home'>
@@ -141,6 +167,11 @@ export default function Home(props) {
                                     <p><span className='gras'>Studio : </span>{anime.studios.length === 0 ? "No studio" : anime.studios[0].name}</p>
                                 </div>
                                 <div className='infosDiv'>
+                                    <div className='like'>
+                                        <div className="btnlike" onClick={()=>Like(index)}>
+                                            <p className="hearth">❤️</p>
+                                        </div>
+                                    </div>
                                     <Link to={"/anime/"+anime.mal_id} className='animeLink'><div className='btnInfos'>Plus d'info</div></Link>
                                 </div>
                             </div>
