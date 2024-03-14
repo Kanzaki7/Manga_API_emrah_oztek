@@ -16,7 +16,7 @@ export default function Home(props) {
     const [btnLike, setBtnLike] = useLocalStorage("btnlike")
     const [hearth, setHearth] = useLocalStorage("hearth")
     const [page, setPage] = useState(1)
-    // const [state, setState] = useState(-1)
+    const [state, setState] = useState(-1)
     // const [animeID, setAnimeID] = useState("")
    
   
@@ -97,8 +97,14 @@ export default function Home(props) {
     }
 
     function Like(index) {
+        setState(index)
         let favA = [...animes]
-        favA[index].favori = props.favori
+        favA[index].favori = false
+        if (favA[index].favori === false) {
+            favA[index].favori = true
+        } else if (favA[index].favori === true) {
+            favA[index].favori = false
+        }
         console.log(favA[index].favori);
         props.setFavoriAnime(favA)
         // if (btnLike === "btnlike") {
@@ -111,12 +117,12 @@ export default function Home(props) {
         // } else if (hearth === "hearthActive") {
         //     setHearth("hearth")
         // }
-        // setState(index)
+        
     }
 
-    useEffect(() => {
-        props.setFavori(!props.favori)
-      }, [])
+    // useEffect(() => {
+    //     props.setFavori(!props.favori)
+    //   }, [])
 
 
     return(

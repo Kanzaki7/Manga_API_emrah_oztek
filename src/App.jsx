@@ -16,7 +16,7 @@ function App() {
   const [favoriAnime, setFavoriAnime] = useLocalStorage([])
   const [favoriManga, setFavoriManga] = useLocalStorage([])
   const [favoriChara, setFavoriChara] = useLocalStorage([])
-  const [favori, setFavori] = useState(false)
+  const [favori, setFavori] = useLocalStorage(false)
 
   const routeur = createBrowserRouter([
     {
